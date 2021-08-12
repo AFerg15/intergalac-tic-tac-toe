@@ -1,0 +1,47 @@
+body, html { 
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+}
+
+#currentPlayer {
+  font-size: 14px;
+  text-align: center;
+  color: white
+}
+
+.square{
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+  font-size: 5rem;
+  text-align: center;
+  cursor: pointer
+}
+
+#gameboard {
+  display: flex;
+  width: 330px;
+  flex-wrap: wrap;
+  margin:  auto;
+}
+
+#resetButton {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  
+}
+
