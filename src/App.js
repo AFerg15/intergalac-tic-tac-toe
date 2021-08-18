@@ -115,7 +115,7 @@ playerTurn = (index) => {
           <div className="playerStats">
           {/* <h2>Current Player:</h2>
           <p id="currentPlayer">{this.state.activePlayer}</p> */}
-          <h2>The winner is:</h2>
+          <h2>WINNER WINNER Space Chicken Dinner:</h2>
           <p id="currentPlayer">{this.state.winStatus}</p>
           <h2>{this.state.gameOver}</h2>
           </div>
