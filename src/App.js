@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Square from './components/Square'
 import './App.css'
+import pixel from './img/pixel.png'
 
 
 class App extends Component{
