@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import Square from './components/Square'
 import './App.css'
 
+
 class App extends Component{
   constructor(props){
     super(props)
     this.state = {
       squares: ["👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨"],
-      activePlayer: "player1",
+      activePlayer: "Player 1",
       winStatus: "",
       gameStatus: false,
       gameOver: "",
@@ -22,13 +23,13 @@ handleGamePlay = (index) => {
   if (this.state.gameStatus === true){
     this.setState({squares: squares, gameOver : "The game is over" })
     // {squares[index] = null}
-} else if (activePlayer === "player1" && squares[index]==="👁‍🗨"){
+} else if (activePlayer === "Player 1" && squares[index]==="👁‍🗨"){
     squares[index] = "👾"
-    this.setState({activePlayer: "player2"})
+    this.setState({activePlayer: "Player 2"})
     this.setState({squares: squares})
-} else if (activePlayer === "player2" && squares[index]==="👁‍🗨"){
+} else if (activePlayer === "Player 2" && squares[index]==="👁‍🗨"){
     squares[index] = "🛸"
-    this.setState({activePlayer: "player1"})
+    this.setState({activePlayer: "Player 1"})
     this.setState({squares: squares})
 } 
 
@@ -49,14 +50,14 @@ handleGamePlay = (index) => {
     // console.log(b)
     // console.log(c)
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c] && squares[a] === "👾"){
-    this.setState({winStatus: "player1"})
+    this.setState({winStatus: "Player 1"})
     console.log("PLAYER ONE")
     console.log(a)
     console.log(b)
     console.log(c)
     this.setState({gameStatus: true})
     }else if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c] && squares[a] === "🛸"){
-    this.setState({winStatus: "player2"})
+    this.setState({winStatus: "Player 2"})
     this.setState({gameStatus: true})
     }
   
@@ -65,7 +66,7 @@ handleGamePlay = (index) => {
 
 resetGame = () => {
   var squares = ["👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨", "👁‍🗨"]
-  var activePlayer = "player1"
+  var activePlayer = "Player 1"
   
 
   this.setState({squares: squares, activePlayer: activePlayer, gameStatus: false, winStatus: "", gameOver: ""})
@@ -74,11 +75,11 @@ resetGame = () => {
 
 playerTurn = (index) => {
  if(this.state.gameStatus === true){
- }else if(this.state.activePlayer === "player2" && this.state.squares[index] !== "👁‍🗨"){
-    this.setState({activePlayer: "player1"})
+ }else if(this.state.activePlayer === "Player 2" && this.state.squares[index] !== "👁‍🗨"){
+    this.setState({activePlayer: "Player 1"})
     console.log("player1")
-  }else if (this.state.activePlayer === "player1" && this.state.squares[index] !== "👁‍🗨"){
-    this.setState({activePlayer: "player2"})
+  }else if (this.state.activePlayer === "Player 1" && this.state.squares[index] !== "👁‍🗨"){
+    this.setState({activePlayer: "Player 2"})
   }
 
 }
@@ -86,16 +87,17 @@ playerTurn = (index) => {
 
   render(){
     return(
-      <div style={{ 
-        backgroundImage: `url("https://images.unsplash.com/photo-1616712134411-6b6ae89bc3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80")`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh'}}>
+     
       <>
+      
         <h1>Intergalac-Tic Tac Toe</h1>
+        <br></br> 
         <h2>Intergalactic intermediary: {this.state.activePlayer}</h2>
+        <br></br> 
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <div id = "gameboard" >
         {this.state.squares.map((value, index) => {
           return (
@@ -109,15 +111,30 @@ playerTurn = (index) => {
         )
         })}
           </div>
-          <h2>Current Player:</h2>
-          <p id="currentPlayer">{this.state.activePlayer}</p>
+          <div className="playerStats">
+          {/* <h2>Current Player:</h2>
+          <p id="currentPlayer">{this.state.activePlayer}</p> */}
           <h2>The winner is:</h2>
           <p id="currentPlayer">{this.state.winStatus}</p>
           <h2>{this.state.gameOver}</h2>
-          <button id="resetButton" onClick = {this.resetGame}>Reset Game</button>
-          
+          </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <div className="wrapper">
+            <br></br>
+            <br></br>
+
+            <br></br>
+          <button id="button" onClick = {this.resetGame}>Reset Game
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          </button>
+          </div>
       </>
-      </div>
+      
     )
   }
 }

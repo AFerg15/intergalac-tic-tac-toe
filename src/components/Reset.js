@@ -9,7 +9,7 @@ class Reset extends Component{
   render(){
     return(
       <>
-        <div className="resetButton"
+        <div className="button"
         onClick = {this.handleClick}>
         {this.props.value}
         </div>
